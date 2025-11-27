@@ -35,7 +35,9 @@ TODO
 
 # User documentation
 ## Dependecies
-TODO
+### Glucose SAT solver
+The program requires the Glucose SAT solver to be installed and compiled in a directory namde "glucose" next to the main program directory. It relies on the version 4.2.1 accessible at: 
+https://github.com/audemard/glucose/
 ## Running the code
 TODO
 
