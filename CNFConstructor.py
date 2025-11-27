@@ -13,10 +13,8 @@ class CNFConstructor:
     def getDimacsCNF(self):
         return self.dimacs_cnf
     
-    def writeDIMACS_CNFinto(self, filePath):
-        file = open(filePath, 'w')
+    def writeDIMACS_CNFinto(self, file):
         file.write(self.dimacs_cnf)
-        file.close()
 
     def generateCNF(self):
         v1_count = self.g1_size
