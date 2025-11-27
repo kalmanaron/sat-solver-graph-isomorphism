@@ -6,10 +6,8 @@ class ResultDecoder:
         self.content = ""
         self.readable = []
     
-    def decodeFromFile(self, filePath):
-        file = open(filePath, 'r')
+    def decodeFromFile(self, file):
         self.content = file.readline()
-        file.close()
         self.__convertIntoVariables()
     
     def __convertIntoVariables(self):
