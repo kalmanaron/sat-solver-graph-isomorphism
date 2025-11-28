@@ -71,7 +71,7 @@ in the language of our variables:
 "There doesn't exist any edge in $E_1$ that is not mapped to an edge in $E_2$ and vice versa"  
   
 $(\forall u,v \in V_1)(\forall i,j \in V_2):$  
-$(((u,v) \in E_1 \space \& \space (i,j) \notin E_2) \lor ((u,v) \notin E_1 \space \& \space (i,j) \in E_2) \implies (\neg x_{u,i} \lor x_{v,i}))$
+$(((u,v) \in E_1 \space \& \space (i,j) \not\in E_2) \lor ((u,v) \not\in E_1 \space \& \space (i,j) \in E_2) \implies (\neg x_{u,i} \lor x_{v,i}))$
 
 # User documentation
 ## Dependecies
