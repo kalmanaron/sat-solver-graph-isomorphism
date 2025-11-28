@@ -81,14 +81,18 @@ https://github.com/audemard/glucose/
 ### Python 3.12
 The program requires Python 3.12 or higher to run.
 ## Running the code
-### Command line usage
+### Execution
 To run the program, naviage the the folder called "sat-solver-graph-isomorphism" and run the following command:
 ```
 python .\program.py <path_to_graph1> <path_to_graph2> <options>
 ```
+### Options
+TODO: describe the 2 options
+### Input format (graph files)
+TODO: describe the input format
 
 # Description of included testing instances
-those 3 i made myself
+TODO: explain those 3 i made myself
 
 # Instance experiments and results
-try to time how long it takes to solve the instances with different sizes
+TODO: try to time how long it takes to solve the instances with different sizes
