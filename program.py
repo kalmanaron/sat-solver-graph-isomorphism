@@ -7,12 +7,6 @@ import tempfile
 import os
 
 PATH_TO_GLUCOSE = '../glucose/simp/glucose'
-PATH_TO_CNF_CREATED = './_formula.cnf'
-PATH_TO_RESULTS_CREATED = './_results.txt'
-
-def upon_exit():
-    os.remove(PATH_TO_CNF_CREATED)
-    os.remove(PATH_TO_RESULTS_CREATED)
 
 def help_message():
     print('USAGE:')
@@ -43,15 +37,19 @@ except IndexError:
     help_message()
     exit()
 
+CNF_TMP_FILE = tempfile.NamedTemporaryFile(mode='w+', delete=False)
+RESULTS_TMP_FILE = tempfile.NamedTemporaryFile(mode='w+', delete=False)
+
 CNF = CNFC.CNFConstructor(G1,G2)
 CNF.generateCNF()
-CNF.writeDIMACS_CNFinto(PATH_TO_CNF_CREATED)
+CNF.writeDIMACS_CNFinto(CNF_TMP_FILE)
+CNF_TMP_FILE.close()
 
 process = subprocess.run(
     [
     PATH_TO_GLUCOSE,
-    PATH_TO_CNF_CREATED,
-    PATH_TO_RESULTS_CREATED
+    CNF_TMP_FILE.name,
+    RESULTS_TMP_FILE.name
     ],
     capture_output=True,
     text=True
@@ -60,13 +58,13 @@ process = subprocess.run(
 if process.stderr != '':
     print('Unknown error occured in Glucose')
     print(process.stderr)
-    exit()
 
 if 'UNSATISFIABLE' in process.stdout:
     print('The graphs are not isomorphic.')
 elif 'SATISFIABLE' in process.stdout:
     decoder = RD.ResultDecoder(G1.getNumberOfVertecies())
-    decoder.decodeFromFile(PATH_TO_RESULTS_CREATED)
+    decoder.decodeFromFile(RESULTS_TMP_FILE)
+    RESULTS_TMP_FILE.close()
     decoder.output()
 
 if '-show-cnf' in sys.argv:
@@ -79,4 +77,7 @@ if '-show-stats' in sys.argv:
     print('------------ GLUCOSE STATISTICS ------------')
     print(process.stdout)
 
-upon_exit()
+if os.path.exists(CNF_TMP_FILE.name):
+        os.remove(CNF_TMP_FILE.name)
+if os.path.exists(RESULTS_TMP_FILE.name):
+    os.remove(RESULTS_TMP_FILE.name)
