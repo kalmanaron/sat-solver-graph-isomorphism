@@ -43,7 +43,7 @@ class CNFConstructor:
         self.dimacs_cnf += formula
 
     def __encodeDefinedOnWholeV1(self):
-        #every vertex V1 maps to at least one vertex from V2
+        #explain in README under: f is defined for every vertex from V1
         out = ""
         for u in range(self.g1_size):
             for v in range(self.g1_size):
@@ -54,7 +54,7 @@ class CNFConstructor:
         return out
     
     def __encodeIsAFunction(self):
-        #a vertex from V1 doesnt get mapped to two vertexes from V2
+        #explain in README under: f is a function
         out = ""
         for k in range(self.g1_size):
             for i in range(self.g1_size):
@@ -66,7 +66,7 @@ class CNFConstructor:
         return out
     
     def __encodeInjection(self):
-        #two vertexes from V1 dont recieve the same mapping when they are not the same
+        #explain in README under: f in injective
         out = ""
         for u in range(self.g1_size):
             for v in range(self.g1_size):
@@ -78,7 +78,7 @@ class CNFConstructor:
         return out
 
     def __encodeSurjection(self):
-        #every vertex from V2 is a product of a mapping of at least one vertex from V1
+        #explain in README under: f is a rujection
         out = ""
         for u in range(self.g1_size):
             for v in range(self.g1_size):
@@ -89,7 +89,7 @@ class CNFConstructor:
         return out
 
     def __encodeEdgeMatch(self):
-        #there are edge conflicts
+        #texplain in README under: Edges are preserved
         out = ""
         for u in range(self.g1_size):
             for v in range(self.g1_size):
