@@ -16,7 +16,7 @@ $$(u, v) \in E_1 \iff (f(u), f(v)) \in E_2$$
 # CNF encoding procedure
 
 
-## Adjency Matrix Representation
+## Adjacency Matrix Representation
 I chose to represent the graphs using an adjacency matrix, this way I can easily access the edges of the graphs in constant time. At the same time every vertex can by represented by a number from 1 to n, where n is the number of vertices in the graph.
 
 
@@ -79,16 +79,16 @@ $(\forall u,v \in V_1)(\forall i,j \in V_2):$
 $(((u,v) \in E_1 \space \land \space (i,j) \not\in E_2) \lor ((u,v) \not\in E_1 \space \land \space (i,j) \in E_2) \implies (\neg x_{u,i} \lor \neg x_{v,i}))$
 
 # User documentation
-## Dependecies
+## Dependencies
 ### Glucose SAT solver
-The program requires the Glucose SAT solver to be installed and compiled in a directory namde "glucose" next to the main program directory. It relies on the version 4.2.1 accessible at: 
+The program requires the Glucose SAT solver to be installed and compiled in a directory named "glucose" next to the main program directory. It relies on the version 4.2.1 accessible at: 
 https://github.com/audemard/glucose/  
 (the path to the glucose executable can be easily changed modifying a single variable at the beginning of the program.py)
 ### Python 3.12
 The program requires Python 3.12 or higher to run.
 ## Running the code
 ### Execution
-To run the program, naviage the the folder called "sat-solver-graph-isomorphism" and run the following command:
+To run the program, navigate the the folder called "sat-solver-graph-isomorphism" and run the following command:
 ```
 python program.py <path_to_graph1> <path_to_graph2> <options>
 ```
@@ -378,7 +378,7 @@ p cnf 16 200
 </details>
 
 ### Input format (graph files)
-The adjency matrix of a graph is expected to be in a single .txt file without any extra lines.  
+The adjacency matrix of a graph is expected to be in a single .txt file without any extra lines.  
 Example:
 ```
 0 1
@@ -392,20 +392,20 @@ Representing the graph
 # Description of included testing instances
 
 ## Easy to verify valid instance
-After running the scipt:
+After running the script:
 ```
 python program.py tests/g1-easy-true.txt tests/g2-easy-true.txt
 ```
 we get the following output
 ```
 The graphs are isomorphic.
-Here is how to rename the verticies:
+Here is how to rename the vertices:
 0 ---> 3
 1 ---> 2
 2 ---> 0
 3 ---> 1
 ```
-Listing how to map the vertecies from g1 to g2 satisfies all the properties defined above, proving that the graphs are isomorphic  
+Listing how to map the vertices from g1 to g2 satisfies all the properties defined above, proving that the graphs are isomorphic  
 where:  
 G1 is:
 ```
@@ -449,14 +449,14 @@ G2:
 0 --> 1 --> 2
 ```
 
-## Instance run'ning in non-trivial time
+## Instance running in non-trivial time
 
 After running the script:  
 ```
 python program.py tests/g1-takes-long.txt tests/g2-takes-long.txt
 ```
 
-we get the following outupt:  
+we get the following output:  
 
 <details>
 
@@ -464,7 +464,7 @@ we get the following outupt:
 
 ```
 The graphs are isomorphic.
-Here is how to rename the verticies:
+Here is how to rename the vertices:
 0 ---> 79
 1 ---> 78
 2 ---> 77
@@ -551,10 +551,10 @@ Here is how to rename the verticies:
   
 
 Where the graphs are:  
-- G1 - full graph with 80 vertecies
+- G1 - full graph with 80 vertices
 - G2 - same as the graph G1
 
 # Instance experiments and results
-I ran a performace test, where I gradually increased the number of vertecies of 2 comlete graphs  
+I ran a performance test, where I gradually increased the number of vertices of 2 complete graphs  
 
 ![image results](results.png)
