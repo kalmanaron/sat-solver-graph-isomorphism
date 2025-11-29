@@ -1,12 +1,12 @@
 # Graph Isomorphism Problem
 The Graph Isomorphism Problem is the computational problem of determining whether two finite graphs are isomorphic.  
-Two graph 
+Two graphs  
 $$G_1 = (V_1, E_1)$$
-and 
+and  
 $$G_2 = (V_2, E_2)$$
-are isomorphic if there exists a bijection
+are isomorphic if there exists a bijection  
 $$f: V_1 \to V_2$$
-such that 
+such that  
 $$(u, v) \in E_1 \iff (f(u), f(v)) \in E_2$$
 
 
