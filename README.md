@@ -96,6 +96,8 @@ python program.py <path_to_graph1> <path_to_graph2> <options>
 
 <summary> example </summary>
 
+From easy to verify output from tests/g[1,2]-easy-true.txt  
+
 ```
 ------------ GLUCOSE STATISTICS ------------
 c
@@ -159,6 +161,7 @@ SAT
 ```
 <details>
 <summary> example </summary>
+From easy to verify output from tests/g[1,2]-easy-true.txt  
 
 ```
 ---------------- DIMACS CNF ----------------
@@ -382,12 +385,13 @@ Representing the graph
 ```
 
 # Description of included testing instances
-## Easy to verify valid input
+
+## Easy to verify valid instance
 After running the scipt:
 ```
 python program.py tests/g1-easy-true.txt tests/g2-easy-true.txt
 ```
-whe get the following output
+we get the following output
 ```
 The graphs are isomorphic.
 Here is how to rename the verticies:
@@ -416,6 +420,135 @@ G2 is:
 v   v
 1<--0
 ```
+
+## Easy to verify invalid instance
+
+After running the script:  
+```
+python program.py tests/g1-easy-false.txt tests/g2-easy-false.txt
+```
+
+we get the following output:  
+```
+The graphs are not isomorphic.
+```
+
+Visually the graphs are,  
+G1:
+```
+0 --> 1 <-- 2
+```
+
+G2:
+```
+0 --> 1 --> 2
+```
+
+## Instance run'ning in non-trivial time
+
+After running the script:  
+```
+python program.py tests/g1-takes-long.txt tests/g2-takes-long.txt
+```
+
+we get the following outupt:  
+
+<details>
+
+<summary> Output: </summary>
+
+```
+The graphs are isomorphic.
+Here is how to rename the verticies:
+0 ---> 79
+1 ---> 78
+2 ---> 77
+3 ---> 76
+4 ---> 75
+5 ---> 74
+6 ---> 73
+7 ---> 72
+8 ---> 71
+9 ---> 70
+10 ---> 69
+11 ---> 68
+12 ---> 67
+13 ---> 66
+14 ---> 65
+15 ---> 64
+16 ---> 63
+17 ---> 62
+18 ---> 61
+19 ---> 60
+20 ---> 59
+21 ---> 58
+22 ---> 57
+23 ---> 56
+24 ---> 55
+25 ---> 54
+26 ---> 53
+27 ---> 52
+28 ---> 51
+29 ---> 50
+30 ---> 49
+31 ---> 48
+32 ---> 47
+33 ---> 46
+34 ---> 45
+35 ---> 44
+36 ---> 43
+37 ---> 42
+38 ---> 41
+39 ---> 40
+40 ---> 39
+41 ---> 38
+42 ---> 37
+43 ---> 36
+44 ---> 35
+45 ---> 34
+46 ---> 33
+47 ---> 32
+48 ---> 31
+49 ---> 30
+50 ---> 29
+51 ---> 28
+52 ---> 27
+53 ---> 26
+54 ---> 25
+55 ---> 24
+56 ---> 23
+57 ---> 22
+58 ---> 21
+59 ---> 20
+60 ---> 19
+61 ---> 18
+62 ---> 17
+63 ---> 16
+64 ---> 15
+65 ---> 14
+66 ---> 13
+67 ---> 12
+68 ---> 11
+69 ---> 10
+70 ---> 9
+71 ---> 8
+72 ---> 7
+73 ---> 6
+74 ---> 5
+75 ---> 4
+76 ---> 3
+77 ---> 2
+78 ---> 1
+79 ---> 0
+```
+
+</details>
+  
+
+
+Where the graphs are:  
+- G1 - full graph with 80 vertecies
+- G2 - the graph G1, but missing a single edge
 
 # Instance experiments and results
 TODO: try to time how long it takes to solve the instances with different sizes
