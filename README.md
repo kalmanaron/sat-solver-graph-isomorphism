@@ -545,10 +545,11 @@ Here is how to rename the verticies:
 </details>
   
 
-
 Where the graphs are:  
 - G1 - full graph with 80 vertecies
-- G2 - the graph G1, but missing a single edge
+- G2 - same as the graph G1
 
 # Instance experiments and results
-TODO: try to time how long it takes to solve the instances with different sizes
+I ran a performace test, where I gradually increased the number of vertecies of 2 comlete graphs  
+
+![image results](results.png)
