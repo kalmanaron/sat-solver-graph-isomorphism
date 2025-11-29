@@ -2,7 +2,6 @@
 The Graph Isomorphism Problem is the computational problem of determining whether two finite graphs are isomorphic.  
 Two graphs  
 $$G_1 = (V_1, E_1)$$
-  
 and  
 $$G_2 = (V_2, E_2)$$
   
