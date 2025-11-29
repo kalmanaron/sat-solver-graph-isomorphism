@@ -78,6 +78,6 @@ if '-show-stats' in sys.argv:
     print(process.stdout)
 
 if os.path.exists(CNF_TMP_FILE.name):
-        os.remove(CNF_TMP_FILE.name)
+    os.remove(CNF_TMP_FILE.name)
 if os.path.exists(RESULTS_TMP_FILE.name):
     os.remove(RESULTS_TMP_FILE.name)
